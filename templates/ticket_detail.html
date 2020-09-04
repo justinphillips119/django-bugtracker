@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Details</title>
+</head>
+<body>
+    
+    <nav>
+        <a href="/"><button>Home</button></a>
+        <a href="/logout/"><button>Logout</button></a>
+    </nav>
+    <hr>
+    <h3>Ticket Title: {{ ticket.title }}</h3>
+    <hr>
+    <h4>Created By: </h4><a href="/user/{{ ticket.created_by.id }}/" style="color: blue;">{{ ticket.created_by }}</a>
+    <br>
+    <br>
+    <h4>Description: </h4>{{ ticket.description }}
+    <br>
+    <br>
+    <h4>Ticket Status: </h4>{{ ticket.completion_status }}
+    <br>
+    <br>
+    <h4>Assigned To: </h4>{{ ticket.assigned_to }}
+    <br>
+    <br>
+    <h4>Completed By: </h4>{{ ticket.completed_by }}
+    <br>
+    <br>
+    {{ ticket.time_created }}
+    <p>
+      <br>
+    </p>
+    <hr>
+    <nav>
+        <a href="/ticket/{{ ticket.id }}/edit/"><button>Edit Ticket</button></a>
+        <a href="/inprogress/{{ ticket.id }}/"><button>In Progress</button></a>
+        <a href="/completed/{{ ticket.id }}/"><button>Completed</button></a>
+        <a href="/invalid/{{ ticket.id }}/"><button>Invalid</button></a>
+    </nav>
+
+</body>
+</html>

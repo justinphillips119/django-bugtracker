@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+</head>
+<body>
+    
+    <nav>
+        <a href="/"><button>Home</button></a> 
+        <a href="/addticket/"><button>Add Ticket</button></a> 
+        <a href="/logout/"><button>Logout</button></a>
+    </nav>
+    <h1>User Info</h1>
+    <hr>
+    <h2>User: {{ bugtracker_user }}</h2>
+    <hr>
+    <h3>Tickets By</h3>
+    {% for ticket in tickets_by %}
+        <ul>
+            <li><a href="/ticket/{{ ticket.id }}/" style="color: blue;">{{ ticket.title }}</a></li>
+        </ul>
+    {% endfor %}
+    <br>
+    <h3>Tickets Assigned</h3>
+    {% for ticket in tickets_assigned %}
+        <ul>
+            <li><a href="/ticket/{{ ticket.id }}/" style="color: blue;">{{ ticket.title }}</a></li>
+        </ul>
+    {% endfor %}
+    <br>
+    <h3>Tickets Completed</h3>
+    {% for ticket in tickets_completed %}
+        <ul>
+            <li><a href="/ticket/{{ ticket.id }}/" style="color: blue;">{{ ticket.title }}</a></li>
+        </ul>
+    {% endfor %}
+    <br>
+</body>
+</html>

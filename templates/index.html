@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Tracker</title>
+</head>
+<body>
+    
+    <h1>{{ title }}</h1>
+    <hr>
+    <nav>
+        <a href="/addticket/"><button>Add Ticket</button></a>
+        <a href="/logout/"><button>Logout</button></a>
+    </nav>
+    <br>
+    <h3>New</h3>
+    {% for ticket in new_tickets %}
+        <ul>  
+            <li><a href="/ticket/{{ ticket.id }}/" style="color: blue;">{{ ticket.title }}</a></li>
+        </ul>
+    {% endfor %}
+
+    <h3>In Progress</h3>
+    {% for ticket in inprogress_tickets %}
+        <ul>            
+            <li><a href="/ticket/{{ ticket.id }}/" style="color: blue;">{{ ticket.title }}</a></li>
+        </ul>
+    {% endfor %}
+
+    <h3>Completed</h3>
+    {% for ticket in completed_tickets %}
+        <ul>
+            <li><a href="/ticket/{{ ticket.id }}/" style="color: blue;">{{ ticket.title }}</a></li>
+        </ul>
+    {% endfor %}
+
+    <h3>Invalid</h3>
+    {% for ticket in invalid_tickets %}
+        <ul>
+            <li><a href="/ticket/{{ ticket.id }}/" style="color: blue;">{{ ticket.title }}</a></li>
+        </ul>
+    {% endfor %}
+
+</body>
+</html>
